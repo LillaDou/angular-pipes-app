@@ -3,6 +3,8 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
+import { LocaleService } from './services/locale.service';
+
 
 
 //Para tener la aplicación en diferentes idiomas, mandamos a llamar la función de registerLocaleData,
@@ -23,8 +25,12 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
 
     {
+      //Necesitamos hacer esto de forma dinámica 
       provide: LOCALE_ID,
-      useValue: 'hu',
+      // useValue: 'hu',
+      deps: [LocaleService], //dependencia
+      useFactory: (localeService: LocaleService) => localeService.getLocale,
+      //useFactory será la función que se disparará cuando el proveedor se esté inicializando
     }
   ]
 };
