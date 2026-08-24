@@ -1,3 +1,5 @@
+//! Los pipes permiten cambiar cómo se ve visualmente la información sin alterar la data original
+
 import { DatePipe, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { Component, effect, signal } from '@angular/core';
 
