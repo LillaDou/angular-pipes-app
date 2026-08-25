@@ -31,7 +31,6 @@ export default class BasicPage {
 
     const interval = setInterval( () => {
       this.customDate.set(new Date() );
-      console.log('tick');
     }, 1000);
 
     onCleanup( () => {
