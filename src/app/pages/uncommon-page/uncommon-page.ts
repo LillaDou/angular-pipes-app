@@ -28,7 +28,7 @@ const client2 = {
 })
 export default class UncommonPage {
 
-  //i18n Select Pipe
+  //i18n Select Pipe - internacionalización
   client = signal(client1);
 
   invitationMap = {
