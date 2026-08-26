@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Card } from '../../components/card/card';
-import { I18nPluralPipe, I18nSelectPipe } from '@angular/common';
+import { I18nPluralPipe, I18nSelectPipe, SlicePipe } from '@angular/common';
 
 
 const client1 = {
@@ -24,6 +24,7 @@ const client2 = {
     Card,
     I18nSelectPipe,
     I18nPluralPipe,
+    SlicePipe,
   ],
   templateUrl: './uncommon-page.html',
 })
