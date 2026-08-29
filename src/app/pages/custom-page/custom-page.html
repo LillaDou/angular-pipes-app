@@ -56,12 +56,22 @@
                 </td>
                 <td>
                   <span class="text-xs w-44"
-                        [style.color]="hero.color | heroColour"
+                        [style.color]="hero.color | heroTextColour"
                   >
-                    {{hero.color | heroColour}}
+                    {{hero.color | heroColour | titlecase}}
+                  </span>
+                  <!-- El encadenamiento de pipes: es importante tener en cuenta que va de izquierda a derecha. Primero se coge el valor
+                  de hero.color, que pasa por el pipe de heroColour y luego pasa por el titlecase. Aquí el orden de los factores
+                  SI altera el producto. Por lo que el orden en el que ponemos los pipes es muy importante -->
+                </td>
+                <td>
+                  <span
+                        [class.text-secondary]="hero.creator === 0"
+                        [class.text-primary]="hero.creator === 1" 
+                  >
+                    {{hero.creator | heroCreator}}
                   </span>
                 </td>
-                <td>{{hero.creator}}</td>
             </tr>
         }
         
